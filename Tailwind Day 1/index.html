@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/index.css" />
     <title>Vite App</title>
+    <style>
+      .hamBtn:hover .sideNav{
+        display: block;
+      }
+      .sideNav{
+        display: none;
+      }
+    </style>
   </head>
   <body>
 
     <!-- navbar -->
-    <nav class="bg-gray-400">
+    <nav class="bg-gray-400 fixed top-0 left-0 z-20 w-full sm:static">
       <div
         class="flex justify-around flex-row-reverse py-3 text-white font-semibold"
       >
         <a href="">TAILWIND</a>
-        <ul class="flex gap-2">
-          <li><a href="">Home</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Contact Us</a></li>
-        </ul>
+
+        <!-- hamburger btn -->
+        <div class="hamBtn">
+          <button class="sm:hidden">
+            <svg class="h-5 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          </button>
+          <ul class="sm:flex gap-2 hidden">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+          <ul class="sideNav gap-2 text-white bg-gray-400 w-fit pl-20 pr-5 pb-5 h-[100vh] fixed  top-0 pt-[48px] left-0">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
+    <!-- small screen sidenav -->
+
+
     <!-- card section -->
     <section>
-      <div class="flex gap-3 flex-wrap justify-center">
+      <div class="flex gap-3 flex-wrap justify-center mt-[48px] sm:mt-0">
         <div
           class="w-[320px] mt-10  rounded-3xl overflow-hidden cursor-pointer shadow-2xl hover:rotate-6"
         >
